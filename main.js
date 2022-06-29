@@ -73,7 +73,34 @@ const validateCred = arr => {
     return invalidCardNumbers;
   };
 
+const idInvalidCardCompanies = cardNumArr => {
+    let invalidCards = findInvalidCards(cardNumArr);
+    let invalidCardCompanies = [];
 
+    for (let i of invalidCards) {
+        if (i[0] === 3) {
+            invalidCardCompanies.push('Amex (American Express');
+        } 
+        else if (i[0] === 4) {
+            invalidCardCompanies.push('Visa');
+        }
+        else if (i[0] === 5) {
+            invalidCardCompanies.push('Mastercard');
+        }
+        else if (i[0] === 6) {
+            invalidCardCompanies.push('Discover');
+        }
+        else {
+            invalidCardCompanies.push('Company not found');
+        }
+    }
+
+    let uniqueInvalidCards = invalidCardCompanies.filter((x, index) => {
+        return invalidCardCompanies.indexOf(x) === index;
+    })
+
+    return console.log(uniqueInvalidCards.sort());
+}
 
 
 
