@@ -102,7 +102,9 @@ const idInvalidCardCompanies = cardNumArr => {
     return console.log(uniqueInvalidCards.sort());
 }
 
-
+validateCred(batch);
+findInvalidCards(batch);
+idInvalidCardCompanies(batch);
 
 
 
