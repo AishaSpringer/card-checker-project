@@ -105,6 +105,3 @@ const idInvalidCardCompanies = cardNumArr => {
 validateCred(batch);
 findInvalidCards(batch);
 idInvalidCardCompanies(batch);
-
-
-
