@@ -24,18 +24,49 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 
 // Add your functions below:
-const validateCred = arr => {
+/* const validateCred = arr => {
     let checkDigits = [];
     let everyOtherDigit = [];
     let subDigits = [];
     let sumArr = [];
-    let finalSum = 0;
+    let finalSum = 0; */
 
-    for (let i = arr.length - 1; i >= 0; i-=2) {
-      checkDigits.push(arr[i]);
+function validateCred(arr) {
+    let total = 0;
+    for (let i = arr.length - 1; i >= 0; i--) {
+        //checkDigits.push(arr[i]);
+        let currValue = arr[i]
+        if ((arr.length - 1 - i) % 2 === 1) {
+            currValue *= 2;
+            if (currValue -= 9;) {
+        }
+      }
+      total += currValue;
     }
 
-    for (let j = arr.length - 2; j >= 0; j -= 2) {
+    return total % 10 === 0;
+}
+
+// Test functions:
+console.log(validateCred(valid1)); // Should print true
+console.log(validateCred(invalid1)); // Should print false
+
+function findInvalidCards(cards) {
+    const invalid = [];
+
+    for (let i = 0; i < cards.length; i++) {
+        let currCred = cards[i];
+        if (!validateCred(currCred)) {
+            invalid.push(currCred);
+        }
+    }
+    return 'Invalid credit card';
+}
+
+// Test function
+
+
+/*     for (let j = arr.length - 2; j >= 0; j -= 2) {
         everyOtherDigit.push(arr[j] * 2);
     }
 
@@ -104,4 +135,4 @@ const idInvalidCardCompanies = cardNumArr => {
 
 validateCred(batch);
 findInvalidCards(batch);
-idInvalidCardCompanies(batch);
+idInvalidCardCompanies(batch); */
