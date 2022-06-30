@@ -38,7 +38,7 @@ function validateCred(arr) {
         let currValue = arr[i]
         if ((arr.length - 1 - i) % 2 === 1) {
             currValue *= 2;
-            if (currValue -= 9;) {
+            if (currValue -= 9) {
         }
       }
       total += currValue;
